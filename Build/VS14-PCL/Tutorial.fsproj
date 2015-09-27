@@ -6,30 +6,30 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a5957be0-a31b-4245-be7f-2218caf83541}</ProjectGuid>
+    <ProjectGuid>{b0fed0ab-ef96-4e20-b7bb-ee478facb5be}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Test</RootNamespace>
-    <AssemblyName>test_fparsec</AssemblyName>
-    <Name>Test</Name>
+    <RootNamespace>Tutorial</RootNamespace>
+    <AssemblyName>tutorial</AssemblyName>
+    <Name>Tutorial</Name>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.5\Microsoft.FSharp.Targets" Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.5\Microsoft.FSharp.Targets')" />
@@ -47,50 +47,8 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
   <ItemGroup>
-    <Compile Include="..\..\Test\Test.fs">
-      <Link>Test.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\BufferTests.fs">
-      <Link>BufferTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\CharSetTests.fs">
-      <Link>CharSetTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\HexFloatTests.fs">
-      <Link>HexFloatTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\TextTests.fs">
-      <Link>TextTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\CloningTests.fs">
-      <Link>CloningTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\StringBufferTests.fs">
-      <Link>StringBufferTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\CharStreamTests.fs">
-      <Link>CharStreamTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\PrimitivesTests.fs">
-      <Link>PrimitivesTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\CharParsersTests.fs">
-      <Link>CharParsersTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\IdentifierValidatorTests.fs">
-      <Link>IdentifierValidatorTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\OperatorPrecedenceParserTests.fs">
-      <Link>OperatorPrecedenceParserTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\RangeTests.fs">
-      <Link>RangeTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\StaticMappingTests.fs">
-      <Link>StaticMappingTests.fs</Link>
-    </Compile>
-    <Compile Include="..\..\Test\AllTests.fs">
-      <Link>AllTests.fs</Link>
+    <Compile Include="..\..\Samples\Tutorial\tutorial.fs">
+      <Link>tutorial.fs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +57,6 @@
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
     <ProjectReference Include="FParsecCS.csproj">
       <Name>FParsecCS</Name>
       <Project>{501423c3-8ea5-4e54-8d9c-ef60272b57fa}</Project>
@@ -110,7 +67,6 @@
       <Project>{8ea340d3-e9e0-477e-9ac3-fbfdf3bad41e}</Project>
       <Private>False</Private>
     </ProjectReference>
-    <Reference Include="System.Numerics" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
 	     Other similar extension points exist, see Microsoft.Common.targets.
